@@ -35,3 +35,24 @@ Real time capabilities | web sockets | subscription
 Tooling support | postman | playground
 Caching | Relies on HTTP cache | Fine Grained - apollo client provides it
 Client control | no | Yes
+
+### GraphQL building blocks
+
+- schema/types
+- Query/Mutation
+- Resolver
+
+### Apollo client
+- Initialize ApolloClient
+    - ```
+        const client = new ApolloClient({
+          uri: 'https://flyby-router-demo.herokuapp.com/',
+          cache: new InMemoryCache(),    // cache query results after fetching them.
+        });
+      ```
+- Connect your client to React
+  - ```
+          <ApolloProvider client={client}>
+            <App />
+          </ApolloProvider>,
+    ```
